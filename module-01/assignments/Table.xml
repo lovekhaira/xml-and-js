@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+    <employee1>
+        <empnumber>1001</empnumber>
+        <empname>Lovepreet kaur</empname>
+        <salary>3000</salary>
+    </employee1>
+    <employee2>
+        <empnumber>1002</empnumber>
+        <empname>Sahil Shienh</empname>
+        <salary>4000</salary>
+    </employee2>
+    <employee3>
+        <empnumber>1003</empnumber>
+        <empname>Ashwin Royal</empname>
+        <salary>3500</salary>
+    </employee3>
+</Table>
