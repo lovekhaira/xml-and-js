@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Record>
+    <Data>
+      <name> Rorie Demanche</name>
+      <email> rdemanche@foxnews.com</email>
+      <phone type="home"> +1(710)153-4949 </phone>
+      <phone type="work"> +1(503)319-3558 </phone>
+      <phone type="mobile"> +1(182)748-1667 </phone>
+     </Data>
+     <Data>
+     <name> Kelcey Suman</name>
+      <email> ksumann1@unews.com</email>
+      <phone type="home"> +1(710)153-4949 </phone>
+      <phone type="work"> +1(503)319-3558 </phone>
+      <phone type="mobile"> +1(182)748-1667 </phone>
+     </Data>
+     <name> sheddan2 heddan</name>
+      <email>sheddan2@alexa.com </email>
+      <phone type="home"> +1(710)153-4949 </phone>
+      <phone type="work"> +1(503)319-3558 </phone>
+      <phone type="mobile"> +1(182)748-1667 </phone>
+      </Data>
+      <name> Lovepreet kaur</name>
+      <email> love3008khaira@gmail.com</email>
+      <phone type="home"> +1(710)153-4949 </phone>
+      <phone type="work"> +1(503)319-3558 </phone>
+      <phone type="mobile"> +1(182)748-1667 </phone>
+      </Data>
+</Record>
