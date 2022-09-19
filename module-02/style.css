@@ -1,7 +1,13 @@
-name {
-  font-weight: bold;
+OriginalName{
+  font-size: 18px;
+}
+category{
+ font-style: italic ;
 }
 
 * {
   display: block;
+}
+indicator{
+  display: inline;
 }
