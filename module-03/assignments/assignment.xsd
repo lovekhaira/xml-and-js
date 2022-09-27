@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="catalog">
+    <xs:complexType>
+        <xs:sequence>
+         <xs:element name="product">
+         <xs:complexType>    
+         <xs:sequence>
+         <xs:element name="catalog_item" minOccurs="0" maxOccurs="unbounded">
+         <xs:complexType>
+         <xs:sequence>
+              <xs:element type="xs:string" name="item_number"/>
+              <xs:element type="xs:float" name="price"/>
+              <xs:element name="size" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+          <xs:sequence>
+              <xs:element name="color_swatch" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                <xs:simpleContent>
+                <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="image"/>
+                </xs:extension>
+                </xs:simpleContent>
+                </xs:complexType>
+                </xs:element>    
+                </xs:sequence>
+                <xs:attribute type="xs:string" name="description"/>
+                </xs:complexType>
+                </xs:element>
+                </xs:sequence>
+                  <xs:attribute type="xs:string" name="gender"/>
+                </xs:complexType>
+                </xs:element>
+                </xs:sequence>
+                        <xs:attribute type="xs:string" name="product_id"/>
+                        <xs:attribute type="xs:string" name="description"/>
+                        <xs:attribute type="xs:string" name="product_image"/>
+                </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
