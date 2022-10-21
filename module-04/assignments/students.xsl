@@ -40,7 +40,7 @@ tell processor to process the entire document with this template.
                 --> 
                 <xsl:value-of select="@rollno"/> 
               </td> 
-              <td><xsl:value-of select="firstname"/></td> 
+              <td><xsl:value-of select=""/></td> 
               <td><xsl:value-of select="lastname"/></td> 
               <td><xsl:value-of select="nickname"/></td> 
               <td><xsl:value-of select="marks"/></td> 

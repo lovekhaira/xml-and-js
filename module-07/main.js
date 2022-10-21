@@ -36,9 +36,9 @@ const personnel = [
   },
 ];
 
-const jedi = personnel.filter((person) => person.isForceUser);
+const jedi = personnel.filter((person) => person.isForceUser)
 
-const totalScores = jedi.map((jedi) => jedi.pilotingScore + jedi.shootingScore);
+.map((jedi) => jedi.pilotingScore + jedi.shootingScore);
 
 const totalScore = totalScores.reduce((acc, value) => acc + value, 0);
 

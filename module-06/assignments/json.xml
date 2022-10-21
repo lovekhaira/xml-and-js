@@ -18,7 +18,7 @@
         <category>cooking</category>
     </book>
     <book>
-        <title>Harry Potter</title>
+        title>Harry Potter</title>
         <author>J K. Rowling</author>
         <year>2005</year>
         <price>29.99</price>
