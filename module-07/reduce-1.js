@@ -21,11 +21,19 @@ const pilots = [
   },
 ];
 
-console.log("Source:");
+
+console.log("Source");
 console.log(pilots);
 
-const totalYears = pilots.reduce((accum, pilot) => {
-  return accum + pilot.years;
-}, 0);
+const totalYears = pilots.reduce((accum, {pilot}) => accum + years,0);
+  
 
-console.log(totalYears);
+const names = pilots.reduce((accum, {names}) => {
+  if(accum.length > 0){
+    return accum + " " + name;
+  }
+  else{
+    return name;
+  }
+}, "");
+
