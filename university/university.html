@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University</title>
+    <link rel="stylesheet" href="university.css">
+</head>
+<body>
+  <h1>UNIVERSITIES</h1>
+    <ol id="root"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "university.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const list = document.getElementById(`root`);
+        const universityNodes = xmlDoc.getElementsByTagName(`row`);
+        const courseNodes = xmlDoc.getElementsByTagName(`courses`);
+        const facultyNodes = xmlDoc.getElementsByTagName(`faculty`);
+        const studentNodes = xmlDoc.getElementsByTagName(`students`);
+        for (let index = 0; index < universityNodes.length; index++) {
+          const universityNode = universityNodes[index];
+          const courseNode = courseNodes[index];
+          const studentNode = studentNodes[index];
+          const facultyNode = facultyNodes[index];
+                const universityName = universityNode.getElementsByTagName(`name`)[0].childNodes[0]
+                .nodeValue;
+                const street = universityNode.getElementsByTagName(`street`)[0].childNodes[0]
+                .nodeValue;
+                const city = universityNode.getElementsByTagName(`city`)[0].childNodes[0]
+                .nodeValue;
+                const region = universityNode.getElementsByTagName(`region`)[0].childNodes[0]
+                .nodeValue;
+                const country = universityNode.getElementsByTagName(`country`)[0].childNodes[0]
+                .nodeValue;
+                const zipCode = universityNode.getElementsByTagName(`zipCode`)[0].childNodes[0]
+                .nodeValue;
+                const courseID = courseNode.getElementsByTagName(`id`)[0].childNodes[0]
+                .nodeValue;
+                const courseTitle = courseNode.getElementsByTagName(`title`)[0].childNodes[0]
+                .nodeValue;
+                const courseDescription = courseNode.getElementsByTagName(`description`)[0].childNodes[0]
+                .nodeValue;
+                const studentID = studentNode.getElementsByTagName(`id`)[0].childNodes[0]
+                .nodeValue;
+                const studentFirstName = studentNode.getElementsByTagName(`firstName`)[0].childNodes[0]
+                .nodeValue;
+                const studentLastName = studentNode.getElementsByTagName(`lastName`)[0].childNodes[0]
+                .nodeValue;
+                const studentDOB = studentNode.getElementsByTagName(`dob`)[0].childNodes[0]
+                .nodeValue;
+                const studentEmail = studentNode.getElementsByTagName(`email`)[0].childNodes[0]
+                .nodeValue;
+                const facultyID = facultyNode.getElementsByTagName(`id`)[0].childNodes[0]
+                .nodeValue;
+                const facultyFirstName = facultyNode.getElementsByTagName(`firstName`)[0].childNodes[0]
+                .nodeValue;
+                const facultyLastName = facultyNode.getElementsByTagName(`lastName`)[0].childNodes[0]
+                .nodeValue;
+                const facultyPhone = facultyNode.getElementsByTagName(`phoneNumber`)[0].childNodes[0]
+                .nodeValue;
+                const facultyEmail = facultyNode.getElementsByTagName(`email`)[0].childNodes[0]
+                .nodeValue;
+
+                const htmlstring=`<h3>Name: ${universityName}</h3>
+                <ol>
+                    <li><p><b>Address- </b></p>
+                    <p>Street: ${street}</p>
+                    <p>City: ${city}</p>
+                    <p>Region: ${region}</p>
+                    <p>Country: ${country}</p>
+                    <p>Zip Code: ${zipCode}</p></li>
+
+                    <li><p><b>Courses- </b> 
+                        <p>  Id:  ${courseID}</p>
+                        <p>  Title:  ${courseTitle}</p>
+                        <p>  Description:  ${courseDescription}</p>
+                    </li>
+
+                    <li><p><b>Students- </b> 
+                        <p>  Id:  ${studentID}</p>
+                        <p>  First Name:  ${studentFirstName}</p>
+                        <p>  Last Name:  ${studentLastName}</p>
+                        <p>  DOB:  ${studentDOB}</p>
+                        <p>  Email:  ${studentEmail}</p>
+                    </li>
+
+                    <li> <p><b>Faculty- </b> 
+                        <p>  Id:  ${facultyID}</p>
+                        <p>  First Name:  ${facultyFirstName}</p>
+                        <p>  Last Name:  ${facultyLastName}</p>
+                        <p>  Phone:  ${facultyPhone}</p>
+                        <p>  Email:  ${facultyEmail}</p>
+                    </li>
+                </ol>`;
+                const value= list.innerHTML + htmlstring;
+                list.innerHTML = value;
+        }
+      }
+    </script>
+</body>
+</html>
