@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documents</title>
+   
+      </head>
+    <body>
+        <ol id="people"></ol>
+        <script>
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+              displayData(this.responseXML);
+            }
+          };
+          xhttp.open("GET", "people.xml", true);
+          xhttp.send();
+        function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html=html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+        }
+        function createpeople(people) {
+        const content = `<li>
+        <article>
+          <h1> id : ${people.id}</h1>
+          <p>email : ${people.email}</p>
+          <h2>first_name : ${people.first_name}</h2>
+          <h2>last_name : ${people.last_name}</h2>
+          <h3>gender : ${people.gender}</h3>
+          <h3>ip_address :  ${people.ip_address} </h3>
+       </article>
+       </li>`;
+        return stringToNode(content);
+      }
+      function parsepeople(xml) {
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const id =
+          xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+        const first_name =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const last_name =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+        const ip_address =
+          xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+        return {
+          email,
+          first_name,
+          last_name,
+          gender,
+          ip_address,
+          id
+        };        
+    }
+        function displayData(xmlDoc) {
+        const person = xmlDoc.getElementsByTagName(`person`);
+        const list = document.getElementById('people');
+        for (let index = 0; index < person.length; index++) {
+          const element = person[index];
+          const parsedpeople = parsepeople(element);
+          const peopleElement = createpeople(parsedpeople);
+          list.appendChild(peopleElement);
+        }
+      }
+        </script>
+    </body>
+</html>
