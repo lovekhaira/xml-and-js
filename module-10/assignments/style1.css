@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+}
+.genre_card{
+    background-color:darkgreen;
+}
+
+.genre_card > div > ol{
+    list-style:circle;
+    margin: 0;
+    background-color:coral;
+
+}
+ol {
+
+    display: flex;
+    overflow:scroll;
+    max-width: 100%;
+  }
