@@ -1,19 +1,51 @@
 body{
     margin: 0;
 }
-.genre_card{
-    background-color:darkgreen;
-}
 
-.genre_card > div > ol{
-    list-style:circle;
-    margin: 0;
-    background-color:coral;
-
-}
-ol {
-
+#playlist {
+    list-style: none;
+    margin:0;
+    padding: 0;
     display: flex;
-    overflow:scroll;
+    overflow: auto;
     max-width: 100%;
-  }
+    border-radius: 8px;
+
+}
+
+#tracks {
+    width:450;
+    max-width: 100%;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+a{
+    color:#FFFFFF;
+}
+
+
+
+article {
+    background-color: #191414;
+    display: block;
+    max-width: 100%;
+    color:#FFFFFF;
+    font-family: "Helvetica", "Arial", sans-serif;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #1DB954;
+    text-align: center;
+
+}
+
+article > div{
+    padding: 10px 20px;
+    display: block;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+article > img{
+    border-radius: 50%;
+}
