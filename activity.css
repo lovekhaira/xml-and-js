@@ -1,0 +1,33 @@
+body{
+    margin:10px;
+    border: 6px solid pink;
+    background-color: papayawhip;
+}
+ol{
+    list-style:inside;
+   margin: 2px;
+   padding: 10px;
+    border: 2px solid rebeccapurple; 
+    display:inline-block; 
+
+}
+
+article{
+  display:inline-block;
+  background-color: palevioletred;
+  padding: 0px;
+}
+ol #tracks{
+    font-size: 10px;
+    font-family: 'Arial', Times, serif;
+  }
+  
+  form{
+  
+      font-family: Arial, 'elephant', sans-serif;
+      font-size:medium;
+      margin: 5px;
+      padding: 5px;
+      border-bottom: 1px solid ;
+  
+  }
